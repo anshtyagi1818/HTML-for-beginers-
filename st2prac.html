@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Navbar</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+}
+
+.navbar{
+    background:#ffffff;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    position:sticky;
+    top:0;
+    z-index:50;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#0077ff;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#333;
+    font-size:18px;
+    font-weight:500;
+}
+
+.search-box{
+    display:flex;
+    background:#eee;
+    padding:5px;
+    border-radius:5px;
+}
+
+.search-box input{
+    border:none;
+    background:transparent;
+    padding:5px;
+    width:180px;
+    outline:none;
+}
+
+.search-box button{
+    background:#0077ff;
+    border:none;
+    color:#fff;
+    padding:6px 10px;
+    border-radius:4px;
+}
+
+.hamburger{
+    font-size:30px;
+    cursor:pointer;
+    display:none;
+}
+
+@media(max-width:768px){
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        background:#fff;
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+        padding:20px;
+        box-shadow:0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .nav-links a{
+        padding:10px 0;
+        border-bottom:1px solid #ddd;
+    }
+
+    .hamburger{
+        display:block;
+    }
+
+    #menu-toggle:checked + .nav-links{
+        display:flex;
+    }
+
+    .search-box input{
+        width:120px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">MyShop</div>
+
+    <input type="checkbox" id="menu-toggle" style="display:none;">
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Categories</a>
+        <a href="#">Cart</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search products...">
+        <button>Go</button>
+    </div>
+
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+</nav>
+
+</body>
+</html>
